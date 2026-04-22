@@ -18,7 +18,7 @@
         <div class="mb-3">
             <label for="nim" class="form-label">NIM</label>
             <input type="number" class="form-control @error('nim') is-invalid @enderror" id="nim" name="nim"
-                value="{{ old('nim', $student->name) }}">
+                value="{{ old('nim', $student->nim) }}">
             @error('nim')
                 <div class="alert
             invalid-feedback">{{ $message }}

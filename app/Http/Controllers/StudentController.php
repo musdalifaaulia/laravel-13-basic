@@ -13,11 +13,10 @@ class StudentController extends Controller
      */
     public function index()
     {
-         return view('student.index',[
-          'title' => 'Student',
-         'students'=> Student::latest()->get(),
-          //'students'=> Student::orderBy('name', 'asc')->get(),
-          ]);
+        return view('student.index',[
+        'title' => 'Student',
+        'students'=> Student::latest()->get(),
+        ]);
     }
 
     /**
@@ -25,7 +24,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-         return view('student.create', ['title' => 'Create Student']);
+        return view('student.create', ['title' => 'Create Student']);
     }
 
     /**
@@ -44,7 +43,7 @@ class StudentController extends Controller
         'nim.numeric' => 'NIM harus angka',
     ]
     );
-      Student::create($validated);
+    Student::create($validated);
     return to_route('student.index')->withSuccess('Data berhasil ditambahkan');
 
     }
