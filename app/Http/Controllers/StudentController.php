@@ -62,9 +62,9 @@ class StudentController extends Controller
     public function edit(Student $student)
     {
         return view('student.edit',[
-          'title' => 'Edit Student',
-          'student'=> $student,
-          ]);
+        'title' => 'Edit Student',
+        'student'=> $student,
+        ]);
     }
 
     /**
@@ -84,7 +84,7 @@ class StudentController extends Controller
         'nim.numeric' => 'NIM harus angka',
     ]
     );
-     $student->update($validated);
+    $student->update($validated);
     return to_route('student.index')->withSuccess('Data berhasil diubah');
     }
 
@@ -93,7 +93,7 @@ class StudentController extends Controller
      */
     public function destroy(Student $student)
     {
-         $student->delete($student);
+        $student->delete($student);
     return to_route('student.index')->withSuccess('Data berhasil dihapus');
     }
 }
